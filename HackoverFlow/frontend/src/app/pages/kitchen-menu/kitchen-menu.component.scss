@@ -37,8 +37,19 @@ th, td {
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #d2daca;
 }
+
+.salad-name {
+    margin-bottom: 15px; /* Adjust the margin-bottom value to add space */
+  }
+
+.company-logo {
+    max-width: 100px; /* Set the maximum width of the logo */
+    position: absolute; /* Set the position property to absolute */
+    bottom: -450px; /* Adjust the bottom value to position the logo as desired */
+    right: 1px; /* Adjust the right value to position the logo as desired */
+  }
 
 button {
     background-color: #4caf50;
