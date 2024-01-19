@@ -4,7 +4,10 @@ import { LandingComponent } from './pages/landing/landing.component';
 import {ListDatapipelineComponent} from "./pages/datapipeline/pages/list-datapipeline/list-datapipeline.component";
 import { StartDataPipelineComponent } from './pages/start-data-pipeline/start-data-pipeline.component';
 import { MealPlantSelectionComponent } from './pages/meal-plant-selection/meal-plant-selection.component';
-import { KitchenMenuComponent } from './pages/kitchen-menu/kitchen-menu.component';
+import { LoginOptionComponent } from './pages/login-option/login-option.component';
+import { KitchenCrewLoginPageComponent } from './pages/kitchen-crew-login-page/kitchen-crew-login-page.component';
+import { EmployeeLoginPageComponent } from './pages/employee-login-page/employee-login-page.component';
+
 
 
 const routes: Routes = [
@@ -13,7 +16,10 @@ const routes: Routes = [
   { path: 'datapipeline',component: ListDatapipelineComponent},
   { path: 'startpipeline',component: StartDataPipelineComponent},
   { path: 'mealPlan',component: MealPlantSelectionComponent},
-  { path: 'kitchen',component: KitchenMenuComponent},
+  { path: 'login',component: LoginOptionComponent},
+  { path: 'kitchen-crew-login', component:KitchenCrewLoginPageComponent },
+  { path: 'employee-login-page', component:EmployeeLoginPageComponent }
+
   // TODO
   // { path: '**', component: PageNotFoundComponent }
 ];
