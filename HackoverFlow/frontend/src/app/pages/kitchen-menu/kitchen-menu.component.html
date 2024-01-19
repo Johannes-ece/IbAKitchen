@@ -1,4 +1,41 @@
-<div>
-    <p>kitchen-menu works!</p>
-</div>
+<div class="kitchen-menu">
+    <table>
+      <thead>
+        <tr>
+          <td></td>
+          <td>Monday</td>
+          <td>Tuesday</td>
+          <td>Wednesday</td>
+          <td>Thursday</td>
+          <td>Friday</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Meat Option</th>
+          <th><input [(ngModel)]="meals.monday.meat" /></th>
+          <th><input [(ngModel)]="meals.tuesday.meat" /></th>
+          <th><input [(ngModel)]="meals.wednesday.meat" /></th>
+          <th><input [(ngModel)]="meals.thursday.meat" /></th>
+          <th><input [(ngModel)]="meals.friday.meat" /></th>
+        </tr>
+        <tr>
+          <th>Vegetarian Option</th>
+          <th><input [(ngModel)]="meals.monday.vegetarian" /></th>
+          <th><input [(ngModel)]="meals.tuesday.vegetarian" /></th>
+          <th><input [(ngModel)]="meals.wednesday.vegetarian" /></th>
+          <th><input [(ngModel)]="meals.thursday.vegetarian" /></th>
+          <th><input [(ngModel)]="meals.friday.vegetarian" /></th>
+        </tr>
+        <tr>
+            <th>Vegan Option</th>
+            <th><input [(ngModel)]="meals.monday.vegan" /></th>
+            <th><input [(ngModel)]="meals.tuesday.vegan" /></th>
+            <th><input [(ngModel)]="meals.wednesday.vegan" /></th>
+            <th><input [(ngModel)]="meals.thursday.vegan" /></th>
+            <th><input [(ngModel)]="meals.friday.vegan" /></th>
+          </tr>
+      </tbody>
+    </table>
+  </div>
   
