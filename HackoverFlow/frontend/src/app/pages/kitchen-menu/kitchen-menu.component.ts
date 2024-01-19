@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { KitchenService } from 'src/app/core/services/kitchen.service';
 
 @Component({
   selector: 'app-kitchen-menu',
@@ -6,12 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./kitchen-menu.component.scss']
 })
 export class KitchenMenuComponent {
+  constructor(private kitchenService: KitchenService) {}
   menu = {
-    monday: {
-      mealtype: {
-        meat: '',
-        vegetarian: '',
-        vegan: ''
+    "monday": {
+      "mealtype": {
+        "meat": '',
+        "vegetarian": '',
+        "vegan": ''
       }
     },
     tuesday: {
@@ -48,8 +50,16 @@ export class KitchenMenuComponent {
   weeklySalad: string = '';
 
   onSubmit(menuData: any) {
+
+    this.kitchenService.create(menuData)
+    .subscribe((value: any) => {
+      console.log('Form submitted with data:', menuData);
+    } );
     // Handle form submission logic here
-    console.log('Form submitted with data:', menuData);
+    
     // You can perform additional logic, like sending the data to a server
+  }
+  menuData(menuData: any) {
+    throw new Error('Method not implemented.');
   }
 }
