@@ -1,0 +1,46 @@
+<div class="sidebar" [ngClass]="{ 'expanded': isExpanded }">
+  <div class="header">
+    <h1 class="title">
+      ibA
+    </h1>
+    <div class="toggle" (click)="handleSidebarToggle()">
+      <span class="chevron"></span>
+    </div>
+  </div>
+  <div class="content">
+    <div class="link">
+      <div class="content" [routerLink]="['/home']" [routerLinkActive]="'active'">
+
+        <div class="icon"></div>
+
+        <div class="title">Home</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['/datapipeline']" [routerLinkActive]="'active'">
+
+        <div class="icon"></div>
+
+        <div class="title">Select Meal Plan</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['/startpipeline']" [routerLinkActive]="'active'">
+ 
+        <div class="icon"></div>
+
+        <div class="title">View Meal Plan</div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="content" [routerLink]="['/mealPlan']" [routerLinkActive]="'active'">
+ 
+        <div class="icon"></div>
+
+        <div class="title">Meal Plan</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer"></div>
+</div>

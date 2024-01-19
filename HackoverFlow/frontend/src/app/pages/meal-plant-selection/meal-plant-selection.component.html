@@ -1,0 +1,42 @@
+<p>meal-plant-selection works!</p>
+<div>
+  <h2>Select Plan</h2>
+
+</div>
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="dagDropdown" ngbDropdownToggle>
+        Monday
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dagDropdown">
+        <ng-container *ngFor="let dag of (dags$ | async)?.dags">
+          <button (click)="changeDag(dag)"ngbDropdownItem>{{ dag?.dag_id }}</button>
+        </ng-container>
+      </div>
+      <p>
+        Monday: {{this.selectedDag?.dag_id}}
+      </p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
+        TuesDay
+      </button>
+      <div ngbDropdownMenu aria-labelledby="fileDropdown">
+        <ng-container *ngFor="let file of (files$ | async)">
+          <button (click)="changeFile(file)"ngbDropdownItem>{{ file?.name }}</button>
+        </ng-container>
+      </div>
+      <p>
+        Tuesday: {{this.selectedFile?.name}}
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
