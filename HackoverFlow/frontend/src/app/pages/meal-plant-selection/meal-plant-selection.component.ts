@@ -12,6 +12,11 @@ export class MealPlantSelectionComponent {
   public files$: Observable<any>;
   selectedDag: any;
   selectedFile: any;
+  Monday: any;
+  Tuesday: any;
+  Wedensday: any;
+  ThursDay: any;
+  Friday: any;
 
   constructor(private mealPlan: MealPlanServiceService) {}
 
@@ -22,9 +27,15 @@ export class MealPlantSelectionComponent {
 
     changeDag(dag: any) {
       this.selectedDag = dag;
+      
     }
   
     changeFile(file: any) {
       this.selectedFile = file;
+      this.Monday = file;
+      this.Tuesday = file;
+      this.Wedensday = file;
+      this.ThursDay = file;
+      this.Friday = file;
     }
 }

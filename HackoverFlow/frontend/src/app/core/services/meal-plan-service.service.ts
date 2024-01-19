@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MealPlanServiceService {
 
-  baseUrl = "/file";
+  baseUrl = "/getMeal";
 
   constructor(private http: HttpClient) { }
 
