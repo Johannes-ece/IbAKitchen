@@ -11,12 +11,14 @@ def insert_file_metadata():
     data = request.json
 
     store_metadata = EmployeeMealPlan(
+        # data["employeeName"],
+        # data["employeeId"],
         data["monday"],
-        data["tuesday"],
-        data["wednesday"],
-        data["thursday"],
+        # data["tuesday"],
+        # data["wednesday"],
+        # data["thursday"],
         data["friday"],
-        data['salat']
+        #data['salat']
     )
 
     # EmployeeMealPlan.insert_one(store_metadata.to_json())

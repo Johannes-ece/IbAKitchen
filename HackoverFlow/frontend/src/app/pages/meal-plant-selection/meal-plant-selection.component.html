@@ -30,7 +30,7 @@
       </button>
       <div ngbDropdownMenu aria-labelledby="fileDropdown">
         <ng-container *ngFor="let file of (files$ | async)">
-          <button (click)="changeFile(file)"ngbDropdownItem>{{ file}}</button>
+          <button (click)="changeTuesday(file)"ngbDropdownItem>{{ file}}</button>
         </ng-container>
       </div>
       <p>
@@ -48,7 +48,7 @@
       </button>
       <div ngbDropdownMenu aria-labelledby="fileDropdown">
         <ng-container *ngFor="let file of (files$ | async)">
-          <button (click)="changeFile(file)"ngbDropdownItem>{{ file}}</button>
+          <button (click)="changeWednesday(file)"ngbDropdownItem>{{ file}}</button>
         </ng-container>
       </div>
       <p>
@@ -66,7 +66,7 @@
       </button>
       <div ngbDropdownMenu aria-labelledby="fileDropdown">
         <ng-container *ngFor="let file of (files$ | async)">
-          <button (click)="changeFile(file)"ngbDropdownItem>{{ file}}</button>
+          <button (click)="changeThursday(file)"ngbDropdownItem>{{ file}}</button>
         </ng-container>
       </div>
       <p>
@@ -84,7 +84,7 @@
       </button>
       <div ngbDropdownMenu aria-labelledby="fileDropdown">
         <ng-container *ngFor="let file of (files$ | async)">
-          <button (click)="changeFile(file)"ngbDropdownItem>{{ file}}</button>
+          <button (click)="changeFriday(file)"ngbDropdownItem>{{ file}}</button>
         </ng-container>
       </div>
       <p>
@@ -94,4 +94,12 @@
   </div>
 </div>
 
-
+<div class="row">
+  <div class="col">
+    <div class="d-inline-block">
+      <button type="button" class="btn btn-danger" (click)="this.submitPlan()">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
