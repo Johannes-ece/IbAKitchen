@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { StartDataPipelineComponent } from './pages/start-data-pipeline/start-data-pipeline.component';
 import {DatapipelineRunModule} from "./pages/datapipeline-run/datapipeline-run.module";
 import { MealPlantSelectionComponent } from './pages/meal-plant-selection/meal-plant-selection.component';
+import { KitchenMenuComponent } from './pages/kitchen-menu/kitchen-menu.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { MealPlantSelectionComponent } from './pages/meal-plant-selection/meal-p
     SideBarComponent,
     StartDataPipelineComponent,
     MealPlantSelectionComponent,
+    KitchenMenuComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,73 @@
+<h3>
+    iba Kitchen
+</h3>
+
+<br>
+<br>
+
+<h5>
+    Please provide meal options for the week
+</h5>
+<br>
+
+
+<div class="kitchen-menu">
+    <form #menuForm="ngForm" (ngSubmit)="onSubmit(menuForm.value)">
+    <table>
+      <thead>
+        <tr>
+          <td></td>
+          <td>Monday</td>
+          <td>Tuesday</td>
+          <td>Wednesday</td>
+          <td>Thursday</td>
+          <td>Friday</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Meat Option</th>
+          <th><input [(ngModel)]="menu.monday.mealtype.meat" name="mondayMeat" /></th>
+          <th><input [(ngModel)]="menu.tuesday.mealtype.meat" name="tuesdayMeat" /></th>
+          <th><input [(ngModel)]="menu.wednesday.mealtype.meat" name="wednesdayMeat" /></th>
+          <th><input [(ngModel)]="menu.thursday.mealtype.meat" name="thursdayMeat" /></th>
+          <th><input [(ngModel)]="menu.friday.mealtype.meat" name="fridayMeat" /></th>
+        </tr>
+        <tr>
+          <th>Vegetarian Option</th>
+          <th><input [(ngModel)]="menu.monday.mealtype.vegetarian" name="mondayVegetarian" /></th>
+          <th><input [(ngModel)]="menu.tuesday.mealtype.vegetarian" name="tuesdayVegetarian" /></th>
+          <th><input [(ngModel)]="menu.wednesday.mealtype.vegetarian" name="wednesdayVegetarian" /></th>
+          <th><input [(ngModel)]="menu.thursday.mealtype.vegetarian" name="thursdayVegetarian" /></th>
+          <th><input [(ngModel)]="menu.friday.mealtype.vegetarian" name="fridayVegetarian" /></th>
+        </tr>
+        <tr>
+            <th>Vegan Option</th>
+            <th><input [(ngModel)]="menu.monday.mealtype.vegan" name="mondayVegan" /></th>
+            <th><input [(ngModel)]="menu.tuesday.mealtype.vegan" name="tuesdayVegan" /></th>
+            <th><input [(ngModel)]="menu.wednesday.mealtype.vegan" name="wednesdayVegan" /></th>
+            <th><input [(ngModel)]="menu.thursday.mealtype.vegan" name="thursdayVegan" /></th>
+            <th><input [(ngModel)]="menu.friday.mealtype.vegan" name="fridayVegan" /></th>
+          </tr>
+      </tbody>
+    </table>
+
+    <br>
+    <br>
+    <br>
+    <h5>
+        Please provide the salad name for the week
+    </h5>
+    <br>
+
+    <div class="salad-name">
+        <label for="weeklySalad">Weekly Salad:</label>
+        <input id="weeklySalad" [(ngModel)]="weeklySalad" [ngModelOptions]="{ standalone: true }" />
+    </div>
+    <br>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+    </form>
+  </div>
+  
