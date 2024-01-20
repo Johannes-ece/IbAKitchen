@@ -18,6 +18,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AccountingComponent } from './pages/accounting/accounting.component';
 import { EmployeeSelectionDetailComponent } from './pages/employee-selection-detail/employee-selection-detail.component';
 import { GuestSelectionDetailComponent } from './pages/guest-selection-detail/guest-selection-detail.component';
+import { SummarizeComponent } from './pages/summarize/summarize.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { GuestSelectionDetailComponent } from './pages/guest-selection-detail/gu
     EmployeeSelectionDetailComponent,
     GuestSelectionDetailComponent,
     AccountingComponent,
+    SummarizeComponent,
   ],
   imports: [
     BrowserModule,
