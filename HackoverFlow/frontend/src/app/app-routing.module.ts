@@ -10,6 +10,7 @@ import { KitchenMenuComponent } from './pages/kitchen-menu/kitchen-menu.componen
 import { AccountingComponent } from './pages/accounting/accounting.component';
 import { EmployeeSelectionDetailComponent } from './pages/employee-selection-detail/employee-selection-detail.component';
 import { GuestSelectionDetailComponent } from './pages/guest-selection-detail/guest-selection-detail.component';
+import { SummarizeComponent } from './pages/summarize/summarize.component';
 
 
 
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'kitchen-crew-login', component:KitchenCrewLoginPageComponent },
   { path: 'viewDetails', component:EmployeeSelectionDetailComponent},
   { path: 'guest', component:GuestSelectionDetailComponent},
-  { path: 'employee-login-page', component:EmployeeLoginPageComponent }
+  { path: 'employee-login-page', component:EmployeeLoginPageComponent },
+  { path: 'kitchenSummarize', component:SummarizeComponent }
 
   // TODO
   // { path: '**', component: PageNotFoundComponent }
