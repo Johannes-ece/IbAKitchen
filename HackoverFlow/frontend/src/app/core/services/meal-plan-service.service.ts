@@ -8,11 +8,16 @@ import { environment } from 'src/environments/environment';
 })
 export class MealPlanServiceService {
 
-  baseUrl = "/file";
-
+  baseUrl = "/getMeal";
   constructor(private http: HttpClient) { }
 
   getAll(){
     return this.http.get(environment.SERVER_URL + this.baseUrl) as Observable<any>;
+  }
+  create(mealPlan: any): Observable<any> {
+    return this.http.post(environment.SERVER_URL + "/set-meal", mealPlan,
+      {headers: {
+          "Access-Control-Allow-Origin": "*"
+      }});
   }
 }

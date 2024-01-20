@@ -10,16 +10,18 @@
         Monday
       </button>
       <div ngbDropdownMenu aria-labelledby="dagDropdown">
-        <ng-container *ngFor="let dag of (dags$ | async)?.dags">
-          <button (click)="changeDag(dag)"ngbDropdownItem>{{ dag?.dag_id }}</button>
+        <ng-container *ngFor="let dag of (dags$ | async)">
+          <button (click)="changeDag(dag)"ngbDropdownItem>{{ dag }}</button>
         </ng-container>
       </div>
       <p>
-        Monday: {{this.selectedDag?.dag_id}}
+        Monday: {{this.selectedDag}}
       </p>
     </div>
   </div>
 </div>
+
+<!-- days in a week -->
 <div class="row">
   <div class="col">
     <div ngbDropdown class="d-inline-block">
@@ -28,15 +30,76 @@
       </button>
       <div ngbDropdownMenu aria-labelledby="fileDropdown">
         <ng-container *ngFor="let file of (files$ | async)">
-          <button (click)="changeFile(file)"ngbDropdownItem>{{ file?.name }}</button>
+          <button (click)="changeTuesday(file)"ngbDropdownItem>{{ file}}</button>
         </ng-container>
       </div>
       <p>
-        Tuesday: {{this.selectedFile?.name}}
+        Tuesday: {{this.Tuesday}}
+      </p>
+    </div>
+  </div>
+</div>
+<!-- days in a week -->
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
+        Wednesday
+      </button>
+      <div ngbDropdownMenu aria-labelledby="fileDropdown">
+        <ng-container *ngFor="let file of (files$ | async)">
+          <button (click)="changeWednesday(file)"ngbDropdownItem>{{ file}}</button>
+        </ng-container>
+      </div>
+      <p>
+        Wednesday: {{this.Wedensday}}
+      </p>
+    </div>
+  </div>
+</div>
+<!-- days in a week -->
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
+        ThursDay
+      </button>
+      <div ngbDropdownMenu aria-labelledby="fileDropdown">
+        <ng-container *ngFor="let file of (files$ | async)">
+          <button (click)="changeThursday(file)"ngbDropdownItem>{{ file}}</button>
+        </ng-container>
+      </div>
+      <p>
+        ThursDay: {{this.ThursDay}}
+      </p>
+    </div>
+  </div>
+</div>
+<!-- days in a week -->
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
+        Friday
+      </button>
+      <div ngbDropdownMenu aria-labelledby="fileDropdown">
+        <ng-container *ngFor="let file of (files$ | async)">
+          <button (click)="changeFriday(file)"ngbDropdownItem>{{ file}}</button>
+        </ng-container>
+      </div>
+      <p>
+        Friday: {{this.Friday}}
       </p>
     </div>
   </div>
 </div>
 
-
-
+<div class="row">
+  <div class="col">
+    <div class="d-inline-block">
+      <button type="button" class="btn btn-danger" (click)="this.submitPlan()">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
