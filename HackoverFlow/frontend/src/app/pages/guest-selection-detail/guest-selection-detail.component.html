@@ -36,11 +36,11 @@
           </button>
           <div ngbDropdownMenu aria-labelledby="fileDropdown">
             <ng-container *ngFor="let file of ['Vegan', 'Vegitatian', 'Meat', 'Meat+Salat', 'Vegan+salat']">
-              <button (click)="changeDay(file)"ngbDropdownItem>{{ file}}</button>
+              <button (click)="changeMeal(file)"ngbDropdownItem>{{ file}}</button>
             </ng-container>
           </div>
           <p>
-            Meal: {{this.day}}
+            Meal: {{this.meal}}
           </p>
         </div>
       </div>

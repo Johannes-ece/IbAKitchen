@@ -41,4 +41,8 @@ changeDay(file: any) {
   this.day = file;
   
 }
+changeMeal(file: any) {
+  this.meal = file;
+  
+}
 }
