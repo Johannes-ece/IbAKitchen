@@ -6,5 +6,6 @@ Designing a meal plan system for iba AG
 
 
 
-<img width="944" alt="image" src="https://github.com/Johannes-ece/IbAKitchen/assets/116598263/0625aef9-99be-4412-916d-a743cef84716">
+<img width="870" alt="image" src="https://github.com/Johannes-ece/IbAKitchen/assets/116598263/798ffcd2-3a08-4a5b-bb38-37cadd89e6ca">
+
 
