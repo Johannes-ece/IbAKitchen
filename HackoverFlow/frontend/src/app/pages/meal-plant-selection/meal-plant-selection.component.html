@@ -21,7 +21,7 @@
           Week
         </button>
         <div ngbDropdownMenu aria-labelledby="weekDropdown">
-          <ng-container *ngFor="let week of ['previousWeek', 'NextWeek']">
+          <ng-container *ngFor="let week of ['ThisWeek', 'NextWeek']">
             <button (click)="changeWeek(week)" ngbDropdownItem>{{ week }}</button>
           </ng-container>
         </div>
@@ -49,6 +49,9 @@
             <button (click)="changeMonday(file)" ngbDropdownItem>{{ file }}</button>
           </ng-container>
         </div>
+        <p>
+          Monday: {{this.Monday}}
+        </p>
       </div>
       <div style="display: inline-block; width: 20px;"></div>
 
@@ -63,6 +66,9 @@
             <button (click)="changeTuesday(file)" ngbDropdownItem>{{ file }}</button>
           </ng-container>
         </div>
+        <p>
+          Tuesday: {{this.Tuesday}}
+        </p>
       </div>
       <div style="display: inline-block; width: 20px;"></div>
 
@@ -77,6 +83,9 @@
             <button (click)="changeWednesday(file)" ngbDropdownItem>{{ file }}</button>
           </ng-container>
         </div>
+        <p>
+          Wedensday: {{this.Wedensday}}
+        </p>
       </div>
       <div style="display: inline-block; width: 20px;"></div>
 
@@ -91,6 +100,9 @@
             <button (click)="changeThursday(file)" ngbDropdownItem>{{ file }}</button>
           </ng-container>
         </div>
+        <p>
+          ThursDay: {{this.ThursDay}}
+        </p>
       </div>
       <div style="display: inline-block; width: 20px;"></div>
 
@@ -105,6 +117,9 @@
             <button (click)="changeFriday(file)" ngbDropdownItem>{{ file }}</button>
           </ng-container>
         </div>
+        <p>
+          Friday: {{this.Friday}}
+        </p>
       </div>
       <div style="display: inline-block; width: 15px;"></div>
       
