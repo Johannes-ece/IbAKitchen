@@ -55,9 +55,6 @@ export class KitchenMenuComponent {
     .subscribe((value: any) => {
       console.log('Form submitted with data:', menuData);
     } );
-    // Handle form submission logic here
-    
-    // You can perform additional logic, like sending the data to a server
   }
   menuData(menuData: any) {
     throw new Error('Method not implemented.');

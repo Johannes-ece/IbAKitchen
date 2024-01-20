@@ -7,6 +7,7 @@ import { LoginOptionComponent } from './pages/login-option/login-option.componen
 import { KitchenCrewLoginPageComponent } from './pages/kitchen-crew-login-page/kitchen-crew-login-page.component';
 import { EmployeeLoginPageComponent } from './pages/employee-login-page/employee-login-page.component';
 import { KitchenMenuComponent } from './pages/kitchen-menu/kitchen-menu.component';
+import { AccountingComponent } from './pages/accounting/accounting.component';
 import { EmployeeSelectionDetailComponent } from './pages/employee-selection-detail/employee-selection-detail.component';
 import { GuestSelectionDetailComponent } from './pages/guest-selection-detail/guest-selection-detail.component';
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'mealPlan',component: MealPlantSelectionComponent},
   { path: 'login',component: LoginOptionComponent},
   { path: 'kitchen',component: KitchenMenuComponent},
+  { path: 'accountingPage',component: AccountingComponent},
   { path: 'kitchen-crew-login', component:KitchenCrewLoginPageComponent },
   { path: 'viewDetails', component:EmployeeSelectionDetailComponent},
   { path: 'guest', component:GuestSelectionDetailComponent},

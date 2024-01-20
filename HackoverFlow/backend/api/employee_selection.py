@@ -138,3 +138,17 @@ def insert_meal_plan():
 #
 #     except Exception as e:
 #         return jsonify({f"Error: {e}"})
+
+# @employee.route("/get-employeePlan", methods=['GET'])
+# def get_all_meal():
+#     # List objects in the bucket
+#     try:
+#         objects = employee_bulk
+#         if objects:
+#             # files = [obj['Key'] for obj in objects]
+#             return jsonify(objects)
+#         else:
+#             return "The meals list is empty."
+
+#     except Exception as e:
+#         return jsonify({f"Error: {e}"})

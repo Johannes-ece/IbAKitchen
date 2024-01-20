@@ -15,6 +15,7 @@ import { StartDataPipelineComponent } from './pages/start-data-pipeline/start-da
 import { MealPlantSelectionComponent } from './pages/meal-plant-selection/meal-plant-selection.component';
 import { KitchenMenuComponent } from './pages/kitchen-menu/kitchen-menu.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AccountingComponent } from './pages/accounting/accounting.component';
 import { EmployeeSelectionDetailComponent } from './pages/employee-selection-detail/employee-selection-detail.component';
 import { GuestSelectionDetailComponent } from './pages/guest-selection-detail/guest-selection-detail.component';
 
@@ -31,6 +32,7 @@ import { GuestSelectionDetailComponent } from './pages/guest-selection-detail/gu
     LoginComponent,
     EmployeeSelectionDetailComponent,
     GuestSelectionDetailComponent,
+    AccountingComponent,
   ],
   imports: [
     BrowserModule,
