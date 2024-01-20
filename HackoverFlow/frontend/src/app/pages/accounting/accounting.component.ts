@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { MealPlanServiceService } from 'src/app/core/services/meal-plan-service.service';
+import { UserLoginService } from 'src/app/core/services/user-login.service';
 
 @Component({
   selector: 'app-accounting',
@@ -9,6 +12,9 @@ export class AccountingComponent {
   employees: any[] = [
     // Your employee data goes here
   ];
+  public data: Observable<any>;
+
+  constructor(private mealPlan: MealPlanServiceService,private shared : UserLoginService) {}
 
   // Dummy data for testing purposes
   // You should replace this with actual data fetched from your service
@@ -18,5 +24,8 @@ export class AccountingComponent {
       { id: 2, name: 'Jane Doe', selectedOptions: { monday: 'Option2', tuesday: 'Option3', wednesday: 'Option4', thursday: 'Option5', friday: 'Option1' , accounting: '4 meals - 16,52 Euro'} },
       // Add more employees as needed
     ];
+    this.data= this.mealPlan.getAllEmpMeal(); 
+    console.log(this.data)
+
   }
 }

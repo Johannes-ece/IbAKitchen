@@ -9,7 +9,10 @@ interface WeeklyMealPlan {
   templateUrl: './guest-selection-detail.component.html',
   styleUrls: ['./guest-selection-detail.component.scss']
 })
-export class GuestSelectionDetailComponent { days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+export class GuestSelectionDetailComponent { 
+  day:any;
+  meal:any;
+days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 mealTypes = ['meat', 'vegan', 'vegi'];
 
 weekly_meal_plan: WeeklyMealPlan = {
@@ -32,5 +35,9 @@ constructor() {
 }
 getMealTypes(day: string): string[] {
   return Object.keys(this.weekly_meal_plan[day]);
+}
+changeDay(file: any) {
+  this.day = file;
+  
 }
 }

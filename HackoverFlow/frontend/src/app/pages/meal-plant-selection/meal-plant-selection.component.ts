@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { KitchenService } from 'src/app/core/services/kitchen.service';
 import { MealPlanServiceService } from 'src/app/core/services/meal-plan-service.service';
 import { UserLoginService } from 'src/app/core/services/user-login.service';
 
@@ -21,6 +22,7 @@ export class MealPlantSelectionComponent {
   public dags$: Observable<any>;
   public files$: Observable<any>;
   selectedDag: any;
+  selectedFile: any;
   Monday: any;
   Tuesday: any;
   Wedensday: any;
