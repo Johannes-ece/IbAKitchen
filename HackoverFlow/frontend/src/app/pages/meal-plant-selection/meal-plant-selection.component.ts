@@ -28,67 +28,67 @@ export class MealPlantSelectionComponent {
   Wedensday: any;
   ThursDay: any;
   Friday: any;
-  salat : any;
-  sample: any;
-  mealPlanDetail : any;
-  preparedPlan$:Observable<any>;
+  salat: any;
+  mealPlanDetail: any;
+  preparedPlan$: Observable<any>;
 
-  constructor(private mealPlan: MealPlanServiceService,private shared : UserLoginService,private kitchen :KitchenService) {}
+  // Placeholder for missing properties
+  selectedWeek: any;
+
+  constructor(private mealPlan: MealPlanServiceService, private shared: UserLoginService) {}
 
   ngOnInit(): void {
     this.dags$ = this.mealPlan.getAll();
     this.files$ = this.mealPlan.getAll();
-    this.preparedPlan$ = this.mealPlan.getplan();
-    this.sample = this.kitchen.getplan();
-    console.log(this.sample)
-    }
+    this.preparedPlan$ = this.mealPlan.get();
+    console.log(this.preparedPlan$);
+  }
 
-    changeDag(dag: any) {
-      this.selectedDag = dag;
-      this.sample = this.kitchen.getplan();
-    console.log(this.sample)
-    }
-    changeMonday(file: any) {
-      this.Monday = file;
-      
-    }
-    changeTuesday(file: any) {
-      this.Tuesday = file;
-      
-    }
-    changeWednesday(file: any) {
-      this.Wedensday = file;
-      
-    }
-    changeThursday(file: any) {
-      this.ThursDay = file;
-      
-    }
-    changeFriday(file: any) {
-      this.Friday = file;
-    }
+  changeDag(dag: any) {
+    this.selectedDag = dag;
+  }
 
-    submitPlan(){
-      { 
-        this.mealPlanDetail = {"friday": this.Friday, "monday": this.selectedDag,
-        "tuesday": this.Tuesday,
-        "wednesday": this.Wedensday,
-        "thursday": this.ThursDay,
-      //   "salat": this.salat,
-      // "username":this.shared.getUsername
-    }; 
-      
-      this.mealPlan.create(this.mealPlanDetail).subscribe((value: any) => {
-             
-              
-              console.log(this.mealPlanDetail);
-              console.log(this.shared.getUsername)
-              // TODO dont subscribe in a subscribe q_q but for now it can work
-            } );
-         
-      }
-    }
-    
-    
-  
+  changeMonday(file: any) {
+    this.Monday = file;
+  }
+
+  changeTuesday(file: any) {
+    this.Tuesday = file;
+  }
+
+  changeWednesday(file: any) {
+    this.Wedensday = file;
+  }
+
+  changeThursday(file: any) {
+    this.ThursDay = file;
+  }
+
+  changeFriday(file: any) {
+    this.Friday = file;
+  }
+
+  submitPlan() {
+    this.mealPlanDetail = {
+      "friday": this.Friday,
+      "monday": this.Monday,
+      "tuesday": this.Tuesday,
+      "wednesday": this.Wedensday,
+      "thursday": this.ThursDay,
+      // "salat": this.salat,
+      // "username": this.shared.getUsername
+    };
+
+    this.mealPlan.create(this.mealPlanDetail).subscribe((value: any) => {
+      console.log(this.mealPlanDetail);
+      console.log(this.shared.getUsername);
+      // TODO don't subscribe in a subscribe, but for now, it can work
+    });
+  }
+
+  // Placeholder for missing method
+  changeWeek(week: any) {
+    // Implement the logic for changing the week
+    this.selectedWeek = week;
+  }
 }
