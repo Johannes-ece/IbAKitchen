@@ -1,0 +1,13 @@
+<p>employee-selection-detail works!</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="input1">Input 1:</label>
+      <input type="text" id="input1" formControlName="input1">
+    </div>
+    <div>
+      <label for="input2">Input 2:</label>
+      <input type="text" id="input2" formControlName="input2">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  

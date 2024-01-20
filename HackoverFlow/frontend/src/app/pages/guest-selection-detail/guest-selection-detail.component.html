@@ -1,0 +1,11 @@
+<p>guest-selection-detail works!</p>
+<div *ngFor="let day of days">
+    <h3>{{ day }}</h3>
+    <div *ngFor="let mealType of getMealTypes(day)">
+      <label for="{{ day }}-{{ mealType }}">Select {{ mealType }}:</label>
+      <select id="{{ day }}-{{ mealType }}" [(ngModel)]="selectedMeals[day][mealType]">
+        <option *ngFor="let meal of weekly_meal_plan[day][mealType]">{{ meal }}</option>
+      </select>
+      <p>Selected {{ day }} {{ mealType }}: {{ selectedMeals[day][mealType] }}</p>
+    </div>
+  </div>
