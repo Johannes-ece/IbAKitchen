@@ -13,35 +13,35 @@ weekly_meal_plan = {
     'Thursday': {'meat': 'vn ', 'vegan': 'kdlngvnflk', 'vegi': 'dhgh'},
     'Friday': {'meat': 'vdn', 'vegan': 'dBVF', 'vegi': 'SDbvbf'}
 }
-employee_bulk = {
-    {
-        "employeeName": "self.employeeName",
-        "employeeID": "self.employeeID",
-        "monday": "self.monday",
-        "tuesday": "self.tuesday",
-        "wednesday": "self.wednesday",
-        "thursday": "self.thursday",
-        "friday": "self.friday",
-        "salat": "self.salat"},
-    {
-        "employeeName": "self.employeeName",
-        "employeeID": "self.employeeID",
-        "monday": "self.monday",
-        "tuesday": "self.tuesday",
-        "wednesday": "self.wednesday",
-        "thursday": "self.thursday",
-        "friday": "self.friday",
-        "salat": "self.salat", },
-    {
-        "employeeName": "self.employeeName",
-        "employeeID": "self.employeeID",
-        "monday": "self.monday",
-        "tuesday": "self.tuesday",
-        "wednesday": "self.wednesday",
-        "thursday": "self.thursday",
-        "friday": "self.friday",
-        "salat": "self.salat", }
-}
+# employee_bulk = {
+#     {
+#         "employeeName": "self.employeeName",
+#         "employeeID": "self.employeeID",
+#         "monday": "self.monday",
+#         "tuesday": "self.tuesday",
+#         "wednesday": "self.wednesday",
+#         "thursday": "self.thursday",
+#         "friday": "self.friday",
+#         "salat": "self.salat"},
+#     {
+#         "employeeName": "self.employeeName",
+#         "employeeID": "self.employeeID",
+#         "monday": "self.monday",
+#         "tuesday": "self.tuesday",
+#         "wednesday": "self.wednesday",
+#         "thursday": "self.thursday",
+#         "friday": "self.friday",
+#         "salat": "self.salat", },
+#     {
+#         "employeeName": "self.employeeName",
+#         "employeeID": "self.employeeID",
+#         "monday": "self.monday",
+#         "tuesday": "self.tuesday",
+#         "wednesday": "self.wednesday",
+#         "thursday": "self.thursday",
+#         "friday": "self.friday",
+#         "salat": "self.salat", }
+# }
 
 
 @employee.route("/set-meal", methods=["POST"])
@@ -58,9 +58,9 @@ def insert_meal_employee_plan():
         data["friday"],
         # data['salat']
     )
-
-    employeeMealPlan.insert_one(store_metadata.to_json())
     print(store_metadata.to_json())
+    employeeMealPlan.insert_one(store_metadata.to_json())
+
 
     return jsonify({"message": "metadata is stored successfully"}), 201
 
@@ -124,17 +124,17 @@ def insert_meal_plan():
     # print(request.json)
     return jsonify({"message": "stored successfully"}), 201
 
-
-@employee.route("/get-employeePlan", methods=['GET'])
-def get_all_meal():
-    # List objects in the bucket
-    try:
-        objects = employee_bulk
-        if objects:
-            # files = [obj['Key'] for obj in objects]
-            return jsonify(objects)
-        else:
-            return "The meals list is empty."
-
-    except Exception as e:
-        return jsonify({f"Error: {e}"})
+#
+# @employee.route("/get-employeePlan", methods=['GET'])
+# def get_all_meal():
+#     # List objects in the bucket
+#     # try:
+#     #     #objects = employee_bulk
+#     #     if objects:
+#     #         # files = [obj['Key'] for obj in objects]
+#     #         return jsonify("objects")
+#     #     else:
+#     #         return "The meals list is empty."
+#
+#     except Exception as e:
+#         return jsonify({f"Error: {e}"})
