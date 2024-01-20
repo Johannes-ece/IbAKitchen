@@ -1,7 +1,7 @@
 from flask import request, Blueprint, jsonify
 from HackoverFlow.backend.model_tables.employee_meal_plan import EmployeeMealPlan
 from HackoverFlow.backend.model_tables.meal_plan import DayMealPlan, WeeklyMealPlan
-from HackoverFlow.backend.model_tables.employee_meal_plan import employeeMealPlan,kitchenMaelPlan
+from HackoverFlow.backend.model_tables.employee_meal_plan import employeeMealPlan, kitchenMaelPlan
 
 employee = Blueprint("file", __name__, template_folder="templates")
 
@@ -12,6 +12,35 @@ weekly_meal_plan = {
     'Wednesday': {'meat': 'vdmn', 'vegan': 'd,vn', 'vegi': 'dfhuihug'},
     'Thursday': {'meat': 'vn ', 'vegan': 'kdlngvnflk', 'vegi': 'dhgh'},
     'Friday': {'meat': 'vdn', 'vegan': 'dBVF', 'vegi': 'SDbvbf'}
+}
+employee_bulk = {
+    {
+        "employeeName": "self.employeeName",
+        "employeeID": "self.employeeID",
+        "monday": "self.monday",
+        "tuesday": "self.tuesday",
+        "wednesday": "self.wednesday",
+        "thursday": "self.thursday",
+        "friday": "self.friday",
+        "salat": "self.salat"},
+    {
+        "employeeName": "self.employeeName",
+        "employeeID": "self.employeeID",
+        "monday": "self.monday",
+        "tuesday": "self.tuesday",
+        "wednesday": "self.wednesday",
+        "thursday": "self.thursday",
+        "friday": "self.friday",
+        "salat": "self.salat", },
+    {
+        "employeeName": "self.employeeName",
+        "employeeID": "self.employeeID",
+        "monday": "self.monday",
+        "tuesday": "self.tuesday",
+        "wednesday": "self.wednesday",
+        "thursday": "self.thursday",
+        "friday": "self.friday",
+        "salat": "self.salat", }
 }
 
 
@@ -94,3 +123,18 @@ def insert_meal_plan():
     kitchenMaelPlan.insert_one(weekly_plan)
     # print(request.json)
     return jsonify({"message": "stored successfully"}), 201
+
+
+@employee.route("/get-employeePlan", methods=['GET'])
+def get_all_meal():
+    # List objects in the bucket
+    try:
+        objects = employee_bulk
+        if objects:
+            # files = [obj['Key'] for obj in objects]
+            return jsonify(objects)
+        else:
+            return "The meals list is empty."
+
+    except Exception as e:
+        return jsonify({f"Error: {e}"})
