@@ -13,35 +13,15 @@ weekly_meal_plan = {
     'Thursday': {'meat': 'vn ', 'vegan': 'kdlngvnflk', 'vegi': 'dhgh'},
     'Friday': {'meat': 'vdn', 'vegan': 'dBVF', 'vegi': 'SDbvbf'}
 }
-# employee_bulk = {
-#     {
-#         "employeeName": "self.employeeName",
-#         "employeeID": "self.employeeID",
-#         "monday": "self.monday",
-#         "tuesday": "self.tuesday",
-#         "wednesday": "self.wednesday",
-#         "thursday": "self.thursday",
-#         "friday": "self.friday",
-#         "salat": "self.salat"},
-#     {
-#         "employeeName": "self.employeeName",
-#         "employeeID": "self.employeeID",
-#         "monday": "self.monday",
-#         "tuesday": "self.tuesday",
-#         "wednesday": "self.wednesday",
-#         "thursday": "self.thursday",
-#         "friday": "self.friday",
-#         "salat": "self.salat", },
-#     {
-#         "employeeName": "self.employeeName",
-#         "employeeID": "self.employeeID",
-#         "monday": "self.monday",
-#         "tuesday": "self.tuesday",
-#         "wednesday": "self.wednesday",
-#         "thursday": "self.thursday",
-#         "friday": "self.friday",
-#         "salat": "self.salat", }
-# }
+employee_bulk = [
+    {"id": 1, "name": 'John Doe',
+     "selectedOptions": {"monday": 'Option1', "tuesday": 'Option2', "wednesday": 'Option3', "thursday": 'Option4',
+                         "friday": '"Option5"', "accounting": '4 meals - 16,52 Euro'}},
+    {"id": 2, "name": 'Jane Doe',
+     "selectedOptions": {"monday": 'Option2', "tuesday": 'Option3', "wednesday": 'Option4', "thursday": 'Option5',
+                         "friday": '"Option1"', "accounting": '4 meals - 16,52 Euro'}},
+    # // Add more employees as needed
+];
 
 
 @employee.route("/set-meal", methods=["POST"])
@@ -60,7 +40,6 @@ def insert_meal_employee_plan():
     )
     print(store_metadata.to_json())
     employeeMealPlan.insert_one(store_metadata.to_json())
-
 
     return jsonify({"message": "metadata is stored successfully"}), 201
 
@@ -124,6 +103,7 @@ def insert_meal_plan():
     # print(request.json)
     return jsonify({"message": "stored successfully"}), 201
 
+
 #
 # @employee.route("/get-employeePlan", methods=['GET'])
 # def get_all_meal():
@@ -139,16 +119,16 @@ def insert_meal_plan():
 #     except Exception as e:
 #         return jsonify({f"Error: {e}"})
 
-# @employee.route("/get-employeePlan", methods=['GET'])
-# def get_all_meal():
-#     # List objects in the bucket
-#     try:
-#         objects = employee_bulk
-#         if objects:
-#             # files = [obj['Key'] for obj in objects]
-#             return jsonify(objects)
-#         else:
-#             return "The meals list is empty."
+@employee.route("/get-employeePlan", methods=['GET'])
+def get_all_employee_meal():
+    # List objects in the bucket
+    try:
+        objects = employee_bulk
+        if objects:
+            # files = [obj['Key'] for obj in objects]
+            return jsonify(objects)
+        else:
+            return "The meals list is empty."
 
-#     except Exception as e:
-#         return jsonify({f"Error: {e}"})
+    except Exception as e:
+        return jsonify({f"Error: {e}"})

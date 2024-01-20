@@ -2,10 +2,28 @@
 <div *ngFor="let day of days">
     <h3>{{ day }}</h3>
     <div *ngFor="let mealType of getMealTypes(day)">
-      <label for="{{ day }}-{{ mealType }}">Select {{ mealType }}:</label>
+      <!-- <label for="{{ day }}-{{ mealType }}">Select {{ mealType }}:</label> -->
       <select id="{{ day }}-{{ mealType }}" [(ngModel)]="selectedMeals[day][mealType]">
         <option *ngFor="let meal of weekly_meal_plan[day][mealType]">{{ meal }}</option>
       </select>
-      <p>Selected {{ day }} {{ mealType }}: {{ selectedMeals[day][mealType] }}</p>
+      <!-- <p>Selected {{ day }} {{ mealType }}: {{ selectedMeals[day][mealType] }}</p> -->
+    </div>
+  </div>
+<!-- days in a week -->
+<div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
+          Friday
+        </button>
+        <div ngbDropdownMenu aria-labelledby="fileDropdown">
+          <ng-container *ngFor="let file of ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']">
+            <button (click)="changeDay(file)"ngbDropdownItem>{{ file}}</button>
+          </ng-container>
+        </div>
+        <p>
+          Friday: {{this.day}}
+        </p>
+      </div>
     </div>
   </div>

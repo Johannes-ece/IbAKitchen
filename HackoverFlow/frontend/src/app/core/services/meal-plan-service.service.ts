@@ -7,6 +7,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class MealPlanServiceService {
+  getAllEmpMeal(): any {
+    return this.http.get(environment.SERVER_URL + "/get-employeePlan") as Observable<any>;
+  }
 
   baseUrl = "/getMeal";
   constructor(private http: HttpClient) { }
@@ -14,7 +17,7 @@ export class MealPlanServiceService {
   getAll(){
     return this.http.get(environment.SERVER_URL + this.baseUrl) as Observable<any>;
   }
-  get(){
+  getplan(){
     return this.http.get(environment.SERVER_URL + "/getMealPlan") as Observable<any>;
   }
   create(mealPlan: any): Observable<any> {

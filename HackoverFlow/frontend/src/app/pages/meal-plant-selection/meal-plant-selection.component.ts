@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { KitchenService } from 'src/app/core/services/kitchen.service';
 import { MealPlanServiceService } from 'src/app/core/services/meal-plan-service.service';
 import { UserLoginService } from 'src/app/core/services/user-login.service';
 
@@ -28,21 +29,24 @@ export class MealPlantSelectionComponent {
   ThursDay: any;
   Friday: any;
   salat : any;
+  sample: any;
   mealPlanDetail : any;
   preparedPlan$:Observable<any>;
 
-  constructor(private mealPlan: MealPlanServiceService,private shared : UserLoginService) {}
+  constructor(private mealPlan: MealPlanServiceService,private shared : UserLoginService,private kitchen :KitchenService) {}
 
   ngOnInit(): void {
     this.dags$ = this.mealPlan.getAll();
     this.files$ = this.mealPlan.getAll();
-    this.preparedPlan$ = this.mealPlan.get();
-    console.log(this.preparedPlan$)
+    this.preparedPlan$ = this.mealPlan.getplan();
+    this.sample = this.kitchen.getplan();
+    console.log(this.sample)
     }
 
     changeDag(dag: any) {
       this.selectedDag = dag;
-      
+      this.sample = this.kitchen.getplan();
+    console.log(this.sample)
     }
     changeMonday(file: any) {
       this.Monday = file;

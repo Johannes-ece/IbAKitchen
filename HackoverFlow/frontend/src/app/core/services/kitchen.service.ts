@@ -16,5 +16,9 @@ export class KitchenService {
   {headers: {
     "Access-Control-Allow-Origin": "*"
 }});}
+
+getplan(){
+  return this.http.get(environment.SERVER_URL + "/getMealPlan") as Observable<any>;
+}
 }
 
