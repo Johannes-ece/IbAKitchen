@@ -1,148 +1,102 @@
-<div class="container">
-  <span class="d-block mx-auto mb-4 text-center" style="font-size: 5rem; color: #ffc107; font-weight: bold;">
-    <img src="https://www.fuerthwiki.de/wiki/images/e/e4/2018_iba_Brands_CMYK_GLOBAL.jpg" alt="iba Restaurant Logo" style="max-width: 70px; margin-right: 10px;">
-    iba Restaurant
-  </span>
-
-<div>
-  <h2>Select Plan</h2>
-
-</div>
-<div class="row">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button type="button" class="btn btn-outline-primary" id="dagDropdown" ngbDropdownToggle>
-        Week
-      </button>
-      <div ngbDropdownMenu aria-labelledby="dagDropdown">
-        <ng-container *ngFor="let dag of ['previousWeek','NextWeek']">
-          <button (click)="changeDag(dag)"ngbDropdownItem>{{ dag }}</button>
-        </ng-container>
+<span class="d-block mx-auto mb-4 text-center" style="font-size: 5rem; color: #ffc107; font-weight: bold;">
+  <img src="https://www.fuerthwiki.de/wiki/images/e/e4/2018_iba_Brands_CMYK_GLOBAL.jpg" alt="iba Restaurant Logo" style="max-width: 70px; margin-right: 10px;">
+  iba Restaurant
+</span>
+    <h1 class="mb-4" style="font-size: 3rem; color: #4e6c6b; text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);">Meal Selection</h1>
+    <img src="assets\images\Screenshot 2024-01-20 140320.png" alt="Kitchen Image" width="50%" class="img-fluid">
+    <img src="assets\images\Screenshot 2024-01-20 140320.png" alt="Kitchen Image" width="50%" class="img-fluid">
+  
+<br>
+<br>
+<br>
+<h5>
+  1. Please select the week
+</h5>
+<br>
+  <div class="row mb-3">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="weekDropdown" ngbDropdownToggle>
+          Week
+        </button>
+        <div ngbDropdownMenu aria-labelledby="weekDropdown">
+          <ng-container *ngFor="let week of ['previousWeek', 'NextWeek']">
+            <button (click)="changeWeek(week)" ngbDropdownItem>{{ week }}</button>
+          </ng-container>
+        </div>
+        <p>Week: {{ selectedWeek }}</p>
       </div>
-      <p>
-        Week: {{this.selectedDag}}
-      </p>
     </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button type="button" class="btn btn-outline-primary" id="dagDropdown" ngbDropdownToggle>
-        Monday
-      </button>
-      <div ngbDropdownMenu aria-labelledby="dagDropdown">
-        <ng-container *ngFor="let dag of (dags$ | async)">
-          <button (click)="changeDag(dag)"ngbDropdownItem>{{ dag }}</button>
-        </ng-container>
-      </div>
-      <p>
-        Monday: {{this.selectedDag}}
-      </p>
-    </div>
-  </div>
-</div>
+  <br>
+  <h5>
+    2. Please select the meal of the day
+  </h5>
+  <br>
 
-<!-- days in a week -->
-<div class="row">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
-        TuesDay
-      </button>
-      <div ngbDropdownMenu aria-labelledby="fileDropdown">
-        <ng-container *ngFor="let file of (files$ | async)">
-          <button (click)="changeTuesday(file)"ngbDropdownItem>{{ file}}</button>
-        </ng-container>
+  <div class="row mb-3">
+    <div class="col">
+      <!-- Monday Dropdown -->
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="mondayDropdown" ngbDropdownToggle>
+          Monday
+        </button>
+        <div ngbDropdownMenu aria-labelledby="mondayDropdown">
+          <!-- Add Monday dropdown items here -->
+        </div>
       </div>
-      <p>
-        Tuesday: {{this.Tuesday}}
-      </p>
-    </div>
-  </div>
-</div>
-<!-- days in a week -->
-<div class="row">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
-        Wednesday
-      </button>
-      <div ngbDropdownMenu aria-labelledby="fileDropdown">
-        <ng-container *ngFor="let file of (files$ | async)">
-          <button (click)="changeWednesday(file)"ngbDropdownItem>{{ file}}</button>
-        </ng-container>
-      </div>
-      <p>
-        Wednesday: {{this.Wedensday}}
-      </p>
-    </div>
-  </div>
-</div>
-<!-- days in a week -->
-<div class="row">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
-        ThursDay
-      </button>
-      <div ngbDropdownMenu aria-labelledby="fileDropdown">
-        <ng-container *ngFor="let file of (files$ | async)">
-          <button (click)="changeThursday(file)"ngbDropdownItem>{{ file}}</button>
-        </ng-container>
-      </div>
-      <p>
-        ThursDay: {{this.ThursDay}}
-      </p>
-    </div>
-  </div>
-</div>
-<!-- days in a week -->
-<div class="row">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
-        Friday
-      </button>
-      <div ngbDropdownMenu aria-labelledby="fileDropdown">
-        <ng-container *ngFor="let file of (files$ | async)">
-          <button (click)="changeFriday(file)"ngbDropdownItem>{{ file}}</button>
-        </ng-container>
-      </div>
-      <p>
-        Friday: {{this.Friday}}
-      </p>
-    </div>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col">
-    <div class="d-inline-block">
-      <button type="button" class="btn btn-danger" (click)="this.submitPlan()">
-        Submit
-      </button>
-    </div>
-  </div>
-</div>
+      <!-- Tuesday Dropdown -->
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="tuesdayDropdown" ngbDropdownToggle>
+          Tuesday
+        </button>
+        <div ngbDropdownMenu aria-labelledby="tuesdayDropdown">
+          <!-- Add Tuesday dropdown items here -->
+        </div>
+      </div>
 
+      <!-- Wednesday Dropdown -->
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="wednesdayDropdown" ngbDropdownToggle>
+          Wednesday
+        </button>
+        <div ngbDropdownMenu aria-labelledby="wednesdayDropdown">
+          <!-- Add Wednesday dropdown items here -->
+        </div>
+      </div>
 
-<!-- days in a week -->
-<!-- <div class="row" *ngFor="let day of ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
-        {{ day }}
-      </button>
-      <div ngbDropdownMenu aria-labelledby="{{ day }}Dropdown">
-        <ng-container *ngFor="let meal of Object.keys(preparedPlan$[day])">
-          <button (click)="changeMeal(day, meal, preparedPlan$[day][meal])" ngbDropdownItem>
-            {{ meal }}: {{ preparedPlan$[day][meal] }}
-          </button>
-        </ng-container>
+      <!-- Thursday Dropdown -->
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="thursdayDropdown" ngbDropdownToggle>
+          Thursday
+        </button>
+        <div ngbDropdownMenu aria-labelledby="thursdayDropdown">
+          <!-- Add Thursday dropdown items here -->
+        </div>
+      </div>
+
+      <!-- Friday Dropdown -->
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="fridayDropdown" ngbDropdownToggle>
+          Friday
+        </button>
+        <div ngbDropdownMenu aria-labelledby="fridayDropdown">
+          <!-- Add Friday dropdown items here -->
+        </div>
       </div>
       
     </div>
   </div>
-</div> -->
+
+  <div class="row mb-3">
+    <div class="col">
+      <div class="d-inline-block">
+        <button type="button" class="btn btn-danger" (click)="submitPlan()">
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+
