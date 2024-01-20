@@ -15,6 +15,7 @@ export class UserLoginService {
     this.isLoggedIn = true;
     this.username = username;
     this.userid = userid;
+    console.log("username",this.username)
   }
 
   logout(): void {

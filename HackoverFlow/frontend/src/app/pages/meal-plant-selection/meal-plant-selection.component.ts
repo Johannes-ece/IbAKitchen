@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MealPlanServiceService } from 'src/app/core/services/meal-plan-service.service';
+import { UserLoginService } from 'src/app/core/services/user-login.service';
 
 interface MealType {
   [key: string]: string;
@@ -26,17 +27,11 @@ export class MealPlantSelectionComponent {
   Wedensday: any;
   ThursDay: any;
   Friday: any;
+  salat : any;
   mealPlanDetail : any;
   preparedPlan$:Observable<any>;
-  weekly_meal_plan: WeeklyMealPlan = {
-    Monday: { meat: '', vegan: '', vegi: '' },
-    Tuesday: { meat: '', vegan: '', vegi: '' },
-    Wednesday: { meat: '', vegan: '', vegi: '' },
-    Thursday: { meat: '', vegan: '', vegi: '' },
-    Friday: { meat: '', vegan: '', vegi: '' },
-  };
 
-  constructor(private mealPlan: MealPlanServiceService) {}
+  constructor(private mealPlan: MealPlanServiceService,private shared : UserLoginService) {}
 
   ngOnInit(): void {
     this.dags$ = this.mealPlan.getAll();
@@ -71,28 +66,25 @@ export class MealPlantSelectionComponent {
 
     submitPlan(){
       { 
-        this.mealPlanDetail = {"friday": this.Friday, "monday": this.selectedDag}; 
+        this.mealPlanDetail = {"friday": this.Friday, "monday": this.selectedDag,
+        "tuesday": this.Tuesday,
+        "wednesday": this.Wedensday,
+        "thursday": this.ThursDay,
+      //   "salat": this.salat,
+      // "username":this.shared.getUsername
+    }; 
       
       this.mealPlan.create(this.mealPlanDetail).subscribe((value: any) => {
              
               
               console.log(this.mealPlanDetail);
+              console.log(this.shared.getUsername)
               // TODO dont subscribe in a subscribe q_q but for now it can work
             } );
          
       }
     }
     
-    changeMeal(day: string, mealType: string, newValue: string) {
-      if (this.weekly_meal_plan[day]) {
-        // Using safe type assertion
-        const meal: MealType = this.weekly_meal_plan[day];
-        
-        // Make sure the property exists before updating it
-        if (meal.hasOwnProperty(mealType)) {
-          meal[mealType] = newValue;
-        }
-      }
-    }
+    
   
 }

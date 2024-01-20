@@ -1,7 +1,7 @@
 from flask import request, Blueprint, jsonify
-from model_tables.employee_meal_plan import EmployeeMealPlan
-from model_tables.meal_plan import DayMealPlan, WeeklyMealPlan
-from model_tables.employee_meal_plan import employeeMealPlan,kitchenMaelPlan
+from HackoverFlow.backend.model_tables.employee_meal_plan import EmployeeMealPlan
+from HackoverFlow.backend.model_tables.meal_plan import DayMealPlan, WeeklyMealPlan
+from HackoverFlow.backend.model_tables.employee_meal_plan import employeeMealPlan, kitchenMaelPlan
 
 employee = Blueprint("file", __name__, template_folder="templates")
 
@@ -58,9 +58,9 @@ def insert_meal_employee_plan():
         data["friday"],
         # data['salat']
     )
-
-    employeeMealPlan.insert_one(store_metadata.to_json())
     print(store_metadata.to_json())
+    employeeMealPlan.insert_one(store_metadata.to_json())
+
 
     return jsonify({"message": "metadata is stored successfully"}), 201
 
@@ -124,6 +124,20 @@ def insert_meal_plan():
     # print(request.json)
     return jsonify({"message": "stored successfully"}), 201
 
+#
+# @employee.route("/get-employeePlan", methods=['GET'])
+# def get_all_meal():
+#     # List objects in the bucket
+#     # try:
+#     #     #objects = employee_bulk
+#     #     if objects:
+#     #         # files = [obj['Key'] for obj in objects]
+#     #         return jsonify("objects")
+#     #     else:
+#     #         return "The meals list is empty."
+#
+#     except Exception as e:
+#         return jsonify({f"Error: {e}"})
 
 # @employee.route("/get-employeePlan", methods=['GET'])
 # def get_all_meal():
