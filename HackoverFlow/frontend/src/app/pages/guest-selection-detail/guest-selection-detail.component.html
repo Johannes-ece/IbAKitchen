@@ -12,7 +12,8 @@
     Please give  your Guest Details
   </h5>
 <!-- days in a week -->
-<div class="row">
+<div class="d-flex justify-content-center">
+<div class="row" >
     <div class="col">
       <div ngbDropdown class="d-inline-block">
         <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
@@ -44,3 +45,42 @@
         </div>
       </div>
   </div>
+</div>
+  <div class="d-flex justify-content-center">
+    <div>
+      <label>
+        <input type="checkbox" [(ngModel)]="startPipelineWithFile"> Add Other to Guests
+      </label>
+      <div *ngIf="startPipelineWithFile">
+        <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
+                  Day
+                </button>
+                <div ngbDropdownMenu aria-labelledby="fileDropdown">
+                  <ng-container *ngFor="let file of ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']">
+                    <button (click)="changeDay(file)"ngbDropdownItem>{{ file}}</button>
+                  </ng-container>
+                </div>
+                <p>
+                  Day: {{this.day}}
+                </p>
+              </div>
+            </div>
+            <div class="col">
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
+                    Meal Options
+                  </button>
+                  <div ngbDropdownMenu aria-labelledby="fileDropdown">
+                    <ng-container *ngFor="let file of ['Vegan', 'Vegitatian', 'Meat', 'Meat+Salat', 'Vegan+salat']">
+                      <button (click)="changeDay(file)"ngbDropdownItem>{{ file}}</button>
+                    </ng-container>
+                  </div>
+                  <p>
+                    Meal: {{this.day}}
+                  </p>
+                </div>
+              </div>
+          </div>

@@ -12,6 +12,7 @@ interface WeeklyMealPlan {
 export class GuestSelectionDetailComponent { 
   day:any;
   meal:any;
+  startPipelineWithFile: boolean = false;
 days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 mealTypes = ['meat', 'vegan', 'vegi'];
 
