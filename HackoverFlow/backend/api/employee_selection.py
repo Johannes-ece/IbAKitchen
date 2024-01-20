@@ -1,7 +1,7 @@
 from flask import request, Blueprint, jsonify
-from HackoverFlow.backend.model_tables.employee_meal_plan import EmployeeMealPlan
-from HackoverFlow.backend.model_tables.meal_plan import DayMealPlan, WeeklyMealPlan
-from HackoverFlow.backend.model_tables.employee_meal_plan import employeeMealPlan,kitchenMaelPlan
+from model_tables.employee_meal_plan import EmployeeMealPlan
+from model_tables.meal_plan import DayMealPlan, WeeklyMealPlan
+from model_tables.employee_meal_plan import employeeMealPlan,kitchenMaelPlan
 
 employee = Blueprint("file", __name__, template_folder="templates")
 

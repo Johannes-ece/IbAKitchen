@@ -1,12 +1,12 @@
 from pymongo import MongoClient
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
-load_dotenv()
+#oad_dotenv()
 
 client = MongoClient(
-    host=os.getenv("MONGODB_URL"),
-    port=int(os.getenv("MONGODB_PORT")),
+    host=("localhost"),
+    port=int(("27017")),
 )
 
 db = client["iba-Kitchen"]
