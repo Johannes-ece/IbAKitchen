@@ -14,6 +14,9 @@ export class MealPlanServiceService {
   getAll(){
     return this.http.get(environment.SERVER_URL + this.baseUrl) as Observable<any>;
   }
+  get(){
+    return this.http.get(environment.SERVER_URL + "/getMealPlan") as Observable<any>;
+  }
   create(mealPlan: any): Observable<any> {
     return this.http.post(environment.SERVER_URL + "/set-meal", mealPlan,
       {headers: {

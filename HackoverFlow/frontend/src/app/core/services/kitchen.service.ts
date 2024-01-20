@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class KitchenService {
-  baseUrl = "/kitchenplan";
+  baseUrl = "/kitchen_plan";
 
   constructor(private http: HttpClient) { }
 

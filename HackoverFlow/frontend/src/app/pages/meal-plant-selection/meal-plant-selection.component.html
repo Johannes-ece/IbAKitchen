@@ -7,6 +7,24 @@
   <div class="col">
     <div ngbDropdown class="d-inline-block">
       <button type="button" class="btn btn-outline-primary" id="dagDropdown" ngbDropdownToggle>
+        Week
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dagDropdown">
+        <ng-container *ngFor="let dag of ['previousWeek','NextWeek']">
+          <button (click)="changeDag(dag)"ngbDropdownItem>{{ dag }}</button>
+        </ng-container>
+      </div>
+      <p>
+        Week: {{this.selectedDag}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="dagDropdown" ngbDropdownToggle>
         Monday
       </button>
       <div ngbDropdownMenu aria-labelledby="dagDropdown">
@@ -103,3 +121,23 @@
     </div>
   </div>
 </div>
+
+
+<!-- days in a week -->
+<!-- <div class="row" *ngFor="let day of ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="fileDropdown" ngbDropdownToggle>
+        {{ day }}
+      </button>
+      <div ngbDropdownMenu aria-labelledby="{{ day }}Dropdown">
+        <ng-container *ngFor="let meal of Object.keys(preparedPlan$[day])">
+          <button (click)="changeMeal(day, meal, preparedPlan$[day][meal])" ngbDropdownItem>
+            {{ meal }}: {{ preparedPlan$[day][meal] }}
+          </button>
+        </ng-container>
+      </div>
+      
+    </div>
+  </div>
+</div> -->
