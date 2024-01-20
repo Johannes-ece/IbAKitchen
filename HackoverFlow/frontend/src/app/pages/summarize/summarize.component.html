@@ -5,10 +5,68 @@
     </span>
   
     <h1 class="mb-4" style="font-size: 3rem; color: #4e6c6b; text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);">Summary Page</h1>
+  
     <div class="text-center">
-        <img src="assets/images/Screenshot%202024-01-20%20134019.png" alt="Kitchen Image" width="50%" class="img-fluid" />
+      <img src="assets\images\Screenshot 2024-01-20 144827.png" alt="Kitchen Image" width="50%" class="img-fluid" />
+    </div>
+  
+    <br>
+    <br>
+  
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Meat</td>
+              <td>{{ getMealCount('Monday', 'Meat') }}</td>
+              <td>{{ getMealCount('Tuesday', 'Meat') }}</td>
+              <td>{{ getMealCount('Wednesday', 'Meat') }}</td>
+              <td>{{ getMealCount('Thursday', 'Meat') }}</td>
+              <td>{{ getMealCount('Friday', 'Meat') }}</td>
+            </tr>
+            <tr>
+              <td>Vegetarian</td>
+              <td>{{ getMealCount('Monday', 'Vegetarian') }}</td>
+              <td>{{ getMealCount('Tuesday', 'Vegetarian') }}</td>
+              <td>{{ getMealCount('Wednesday', 'Vegetarian') }}</td>
+              <td>{{ getMealCount('Thursday', 'Vegetarian') }}</td>
+              <td>{{ getMealCount('Friday', 'Vegetarian') }}</td>
+            </tr>
+            <tr>
+              <td>Vegan</td>
+              <td>{{ getMealCount('Monday', 'Vegan') }}</td>
+              <td>{{ getMealCount('Tuesday', 'Vegan') }}</td>
+              <td>{{ getMealCount('Wednesday', 'Vegan') }}</td>
+              <td>{{ getMealCount('Thursday', 'Vegan') }}</td>
+              <td>{{ getMealCount('Friday', 'Vegan') }}</td>
+            </tr>
+            <tr>
+              <td>Salad</td>
+              <td>{{ getMealCount('Monday', 'Salad') }}</td>
+              <td>{{ getMealCount('Tuesday', 'Salad') }}</td>
+              <td>{{ getMealCount('Wednesday', 'Salad') }}</td>
+              <td>{{ getMealCount('Thursday', 'Salad') }}</td>
+              <td>{{ getMealCount('Friday', 'Salad') }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button type="submit">End</button>
       </div>
-    <br>
-    <br>
-
-</div>
+    </div>
+  </div>
+  

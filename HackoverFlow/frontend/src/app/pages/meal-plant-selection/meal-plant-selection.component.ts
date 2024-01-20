@@ -40,7 +40,7 @@ export class MealPlantSelectionComponent {
   ngOnInit(): void {
     this.dags$ = this.mealPlan.getAll();
     this.files$ = this.mealPlan.getAll();
-    this.preparedPlan$ = this.mealPlan.get();
+    this.preparedPlan$ = this.mealPlan.getplan();
     console.log(this.preparedPlan$);
   }
 
