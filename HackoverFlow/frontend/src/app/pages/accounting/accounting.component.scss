@@ -9,3 +9,13 @@ h1 {
     margin-bottom: 20px;
     padding: 10px;
 }
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #d2daca;
+}
