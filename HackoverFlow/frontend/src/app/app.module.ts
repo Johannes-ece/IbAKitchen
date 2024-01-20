@@ -14,6 +14,7 @@ import { StartDataPipelineComponent } from './pages/start-data-pipeline/start-da
 import { MealPlantSelectionComponent } from './pages/meal-plant-selection/meal-plant-selection.component';
 import { KitchenMenuComponent } from './pages/kitchen-menu/kitchen-menu.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AccountingComponent } from './pages/accounting/accounting.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { LoginComponent } from './pages/login/login.component';
     MealPlantSelectionComponent,
     KitchenMenuComponent,
     LoginComponent,
+    AccountingComponent,
   ],
   imports: [
     BrowserModule,
